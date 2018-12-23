@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phones.ie</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  
+  <body>
+		
+	 <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <% end %>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", welcomes_path %></li>
+        <li><%= link_to "TOP10", root_path %></li>
+        <li><%= link_to "Cart", carts_path %></li>
+         <li><%= link_to "Contact", messages_path %></li>
+        <li><%= link_to "Products Details", products_path %></li>
+      </ul>
+      
+    <div class="basket"> 
+       <%= render 'layouts/cart' %>
+    </div> 
+    
+  
+    <br/>
+    <div id="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
+	<footer>
+	Created by Maja Dmitrovic, Michelle Hickey, Natalia Bujnowicz and Denis Petrovskij. <br/> Higher Diploma in Web Technologies - Server Side Web Technologies - Project 2018.
+	</footer>
+
+</body>
+</html>

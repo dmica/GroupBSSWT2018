@@ -1,0 +1,39 @@
+<h1>Products for sale</h1>
+
+<% @products.each do |product| %>
+	<div class="well">
+		<div class="row">
+			<div class="col-sm-8">
+				<h3><%= product.name %></h3>
+			</div>
+			<div class="col-sm-8">
+				<h3><%= product.model %></h3>
+			</div>
+			<div class="col-sm-8">
+				<%= image_tag(product.image, style:'width: 10%') %>
+			</div>
+			<div class="col-sm-8">
+				<h3><%= product.camera %></h3>
+			</div>
+			<div class="col-sm-8">
+				<h3><%= product.dimensions %></h3>
+			</div>
+			<div class="col-sm-8">
+				<h3><%= product.description %></h3>
+			</div>
+			<div class="col-sm-4">
+				<div class="pull-right">
+				<%= form_for(@order_item, remote: true) do |f| %>
+					<%= f.hidden_field :product_id, value: product.id %>
+					<h5><%= product.price %></h5>
+					<div class="form-group">
+						<%= f.text_field :quantity, value: 1, min: 1, class: 'form-control' %>
+					</div>
+					<%= f.submit "Add to cart", class: 'btn btn-primary btn-sm' %>
+					<br/>Only registered user can add product to shopping cart. Sign Up/Login, please.
+				<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

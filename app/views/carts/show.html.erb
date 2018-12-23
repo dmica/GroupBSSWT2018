@@ -1,0 +1,57 @@
+<div class="cart_item">
+	<%= render "carts/cart_item" %>
+	
+	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+<div id="paypal-button-container"></div>
+
+<script>
+
+    // Render the PayPal button
+
+    paypal.Button.render({
+
+        // Set environment
+
+        env: 'sandbox', // sandbox | production
+
+        // Specify the style of the button
+
+        style: {
+            label: 'checkout',
+            size:  'small',    // small | medium | large | responsive
+            shape: 'pill',     // pill | rect
+            color: 'gold'      // gold | blue | silver | black
+        },
+        
+        
+
+        // PayPal Client IDs 
+        
+        client: {
+            sandbox: 'AVg0DdN9tPs6YxG4aRpmxvt1j3hq8ZIc6h-Mhyz-Bsr5mnuZB7EAsJM3yTUvQIE7r6pUl0cqmci_LKOw',
+            production: 'EBvazOI2F4r8XUpm23NY6m1PmT11199MmyQ0lp8-zfXDKBirUXMvB2N8m-NbAbgV8j86rwqIedAvv6ow'
+        },
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: "0.01", currency: 'EUR' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function() {
+                window.alert('Payment Complete! Thank you!');
+            });
+        }
+
+    }, '#paypal-button-container');
+
+</script>
+</div>

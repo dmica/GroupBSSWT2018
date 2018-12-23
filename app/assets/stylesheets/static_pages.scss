@@ -1,0 +1,101 @@
+body
+{
+	width: 100%;
+	margin: 0 auto;
+	/* Background pattern from Toptal Subtle Patterns */
+	background: url(grey_wash_wall.png) repeat;
+	color: #FFF94C;
+}
+
+nav
+{
+	padding: 5px 0;
+	text-align: center;
+}
+
+a
+{
+	color: #FFF94C;
+	text-decoration: none;
+}
+
+ul
+{
+	list-style-type: none;
+	display: inline-block;
+}
+
+ul > li
+{
+	float: left;
+	min-width: 100px;
+	height: auto;
+	padding: 15px;
+	background-color: #7F7F73;
+	border-radius: 80%;
+	border: 5px double #2c2c2c;
+	margin: 0 2px;
+}
+
+ul > li:hover
+{
+	background-color: #3f3f3f;
+	border: 5px double #FFF94C;
+}
+
+#container
+{
+	width: 70%;
+	margin: 0 auto;
+	padding: 30px;
+	height: auto;
+	border: 5px double #FFF94C;
+	text-align: center;
+	font-size: 22px;
+}
+
+footer
+{
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+}
+
+.basket
+{
+	background-color: #000;
+	border: 5px double #FFF94C;
+	max-width: 150px;
+	float: right;
+	position: fixed;
+	right: 0;
+	top: 10px;
+}
+
+.image
+{
+	width: 50%;
+	border: 10px double #FFF94C;
+}
+
+.table
+{
+	margin-top: 22px;
+	width: 100%;
+	text-align: center;
+}
+
+
+.table > tr, td
+{
+	border: 3px dashed #FFF94C;
+	padding: 20px;
+	margin: 10px;
+}
+
+.well
+{
+	border: 3px dashed #FFF94C;
+	padding: 20px 10px;
+}

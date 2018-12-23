@@ -1,0 +1,7 @@
+<h1 class="messagesTitle">Editing Message</h1>
+<div id="messagesForm">
+    <%= render 'form', message: @message %>
+    
+    <%= link_to 'Show', @message %> |
+    <%= link_to 'Back', messages_path %>
+</div>
