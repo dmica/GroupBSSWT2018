@@ -15,6 +15,11 @@ User Login page:
 <a href="https://ibb.co/7vY1pMQ"><img src="https://i.ibb.co/ZdLMg4S/6.png" alt="6" border="0"></a>
 
 
+User can edit or destroy their account:
+
+<a href="https://ibb.co/JqSywPJ"><img src="https://i.ibb.co/vhMQ68n/9.png" alt="9" border="0"></a>
+
+
 Registered user that is logged in can add products to cart:
 
 <a href="https://ibb.co/vPWQvbB"><img src="https://i.ibb.co/0MLFVkX/2.png" alt="2" border="0"></a>
